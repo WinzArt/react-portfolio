@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.cdnfonts.com/css/blanka');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    /* font-family: 'Inter', sans-serif; */
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .blinking-cursor:after {
+    content: '|';
+    @apply text-primary;
+    animation: blink 1s step-start infinite;
+  }
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .navlink div {
+    @apply relative after:absolute after:-bottom-[5px] after:left-0 after:h-[2px] after:w-0 after:bg-gradient-to-r after:from-indigo-500 after:from-5% after:via-sky-500 after:via-30% after:to-primary after:to-90% after:duration-300;
+  }
+  .navlink.active div {
+    @apply after:w-full;
+  }
+
+  .myBtn {
+    @apply before:absolute before:inset-0 before:-z-10 before:-skew-y-3 before:rounded-lg before:bg-primary before:shadow-md after:absolute after:-inset-x-0.5 after:-z-20 after:h-0 after:w-[102%] after:-skew-y-6 after:rounded-lg after:bg-gradient-to-r after:from-indigo-500 after:from-5% after:via-sky-500 after:via-30% after:to-primary after:to-90% after:opacity-75 after:blur-sm after:duration-300 hover:after:h-[110%];
+  }
+}
