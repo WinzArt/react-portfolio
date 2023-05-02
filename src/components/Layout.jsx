@@ -5,6 +5,7 @@ import { Navbar, Footer } from './index'
 import { styles } from '../styles'
 
 import { staggerContainer } from '../utils/motion'
+import { bgImage } from '../assets'
 
 const Layout = (Component, idName) => {
   return (
