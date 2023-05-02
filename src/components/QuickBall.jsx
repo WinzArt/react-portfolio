@@ -50,7 +50,7 @@ const Quickball = () => {
               ? 'line-md:menu-to-close-transition'
               : 'line-md:close-to-menu-transition'
           }
-          className='text-xl text-white'
+          className='text-xl text-light dark:text-dark'
         />
       </animated.button>
 

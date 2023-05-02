@@ -61,7 +61,7 @@ const About = () => {
                 alt='Profile picture'
                 className='max-w-[75%] rounded-xl drop-shadow-lg'
               />
-              <div className='absolute -bottom-10 right-10 flex h-1/3 w-1/4 items-center justify-center rounded-full bg-white p-1 drop-shadow-lg'>
+              <div className='absolute -bottom-5 right-7 flex h-1/3 w-1/4 items-center justify-center rounded-full bg-white p-1 drop-shadow-lg'>
                 <Icon
                   icon='noto:construction-worker-medium-skin-tone'
                   className='absolute h-auto w-1/2 brightness-90'
@@ -77,7 +77,7 @@ const About = () => {
               variants={fadeIn('left', 'spring', 0.2, 1)}
             >
               I had worked for 5 years at a
-              <span className='font-semibold text-primary'>
+              <span className='font-medium text-primary'>
                 {' Security Systems & Building Technologies '}
               </span>
               company before deciding to continue my education to the next

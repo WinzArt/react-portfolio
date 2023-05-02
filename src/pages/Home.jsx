@@ -71,9 +71,10 @@ const Home = (index, title) => {
             Student & <span className='text-primary'>{text}</span>
           </h3>
           <m.p className='py-5 text-base' variants={fadeIn('', '', 0.3, 1)}>
-            <span className='font-semibold'>{`I'm a 5th-semester `}</span>
+            <span className='font-medium text-slate-400'>{`I'm a 5th-semester `}</span>
             computer science student studying informatics engineering at
-            Pamulang University with a passion for technology.
+            <span className='font-medium text-primary'>{` Pamulang University `}</span>{' '}
+            with a passion for technology.
           </m.p>
           <m.div
             whileHover={{ y: -3 }}
