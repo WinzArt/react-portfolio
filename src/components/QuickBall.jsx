@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react'
-import { useSpring, useTrail, animated } from 'react-spring'
-import { Icon } from '@iconify/react'
 import { NavLink } from 'react-router-dom'
+import { useSpring, useTrail, animated } from '@react-spring/web'
+import { Icon } from '@iconify/react'
 import { navLinks } from '../constants'
 
 const Quickball = () => {
@@ -17,15 +17,12 @@ const Quickball = () => {
 
   const items = useMemo(() => {
     const angleStep = 180 / (navLinks.length - 1)
-    return navLinks.map((link, index) => {
+    return navLinks.map(({ id, to, title, icon }, index) => {
       const angle = index * angleStep - 0
       const x = Math.sin(angle * (Math.PI / -180)) * 6
       const y = Math.cos(angle * (Math.PI / -180)) * 6
       const position = `translate(${x}rem, ${-y}rem)`
-      return {
-        ...link,
-        position,
-      }
+      return { id, to, title, icon, position }
     })
   }, [])
 
@@ -37,9 +34,7 @@ const Quickball = () => {
     config: { tension: 500, friction: 30 },
   })
 
-  const handleNavLinkClick = () => {
-    setIsOpen(false)
-  }
+  const handleNavLinkClick = () => setIsOpen(false)
 
   return (
     <div className='fixed bottom-40 right-4 z-50 sm:hidden'>
@@ -60,7 +55,7 @@ const Quickball = () => {
       </animated.button>
 
       <div className='absolute inset-0 -z-10 flex items-center justify-center'>
-        {items.map(({ id, title, icon, position }, index) => (
+        {items.map(({ id, to, title, icon, position }, index) => (
           <animated.div
             key={id}
             className='absolute flex h-14 w-14 items-center justify-center rounded-full bg-primary focus:outline-none'
@@ -71,9 +66,8 @@ const Quickball = () => {
             }}
           >
             <NavLink
-              to={id}
-              activeClassName='bg-purple-700'
-              onClick={handleNavLinkClick}
+              to={to}
+              onClick={() => setIsOpen(false)}
               className='flex h-full w-full items-center justify-center rounded-full'
             >
               <Icon icon={icon} className='text-xl text-white' />

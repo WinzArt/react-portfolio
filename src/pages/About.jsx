@@ -8,10 +8,10 @@ import {
 } from 'framer-motion'
 import { Icon } from '@iconify/react'
 
-import { profile } from '../assets'
-import { Head, AnimatedText } from '../components'
+import { profile, Stamp } from '../assets'
 import { zoomIn, fadeIn, textVariant, slideIn } from '../utils/motion'
 import { styles } from '../styles'
+import TitleBar from '../constants'
 
 const AnimatedNumb = ({ value }) => {
   const ref = useRef(null)
@@ -40,15 +40,11 @@ const AnimatedNumb = ({ value }) => {
 const About = () => {
   return (
     <>
-      <Head title='About' />
+      <TitleBar title='About' />
       <section
         className={`${styles.padding} relative flex w-full flex-col items-center justify-center pt-20`}
       >
         <m.div className='text-center sm:pb-20' variants={textVariant()}>
-          {/* <AnimatedText
-            text='About Me'
-            className='text-4xl font-semibold sm:mb-3'
-          /> */}
           <h1 className='text-4xl font-semibold capitalize sm:mb-3'>
             About Me
           </h1>
@@ -56,14 +52,23 @@ const About = () => {
         </m.div>
         <div className='flex flex-col items-center gap-y-10 py-10 sm:flex-row sm:gap-x-20'>
           <m.div
-            className='flex w-full justify-center sm:w-1/2 sm:justify-end'
+            className='relative flex w-full items-center justify-center sm:w-1/2 sm:justify-end'
             variants={zoomIn('spring', 0.1, 0.5)}
           >
-            <img
-              src={profile}
-              alt='Profile picture'
-              className='max-w-[75%] rounded-xl drop-shadow-lg'
-            />
+            <div className='flex items-center justify-center'>
+              <img
+                src={profile}
+                alt='Profile picture'
+                className='max-w-[75%] rounded-xl drop-shadow-lg'
+              />
+              <div className='absolute -bottom-10 right-10 flex h-1/3 w-1/4 items-center justify-center rounded-full bg-white p-1 drop-shadow-lg'>
+                <Icon
+                  icon='noto:construction-worker-medium-skin-tone'
+                  className='absolute h-auto w-1/2 brightness-90'
+                />
+                <Stamp className='h-full animate-spin-slow' />
+              </div>
+            </div>
           </m.div>
 
           <div className='flex flex-col justify-start sm:w-1/2'>
