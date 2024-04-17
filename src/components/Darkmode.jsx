@@ -28,7 +28,7 @@ const DarkMode = () => {
   }, [])
 
   return (
-    <div className='dark_mode hidden h-7 list-none flex-row items-center gap-3 border-l border-dark pl-8 dark:border-light sm:flex'>
+    <div className='dark_mode h-7 list-none flex-row items-center gap-3 border-l border-dark pl-8 dark:border-light sm:flex'>
       <input
         className='dark_mode_input hidden'
         type='checkbox'

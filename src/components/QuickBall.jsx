@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react'
-import { useSpring, useTrail, animated } from 'react-spring'
+import { useSpring, useTrail, animated } from '@react-spring/web'
 import { Icon } from '@iconify/react'
 import { NavLink } from 'react-router-dom'
 import { navLinks } from '../constants'

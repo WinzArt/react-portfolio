@@ -2,28 +2,33 @@ import { project_1, project_2, project_3, project_4 } from "../assets/project";
 
 export const navLinks = [
   {
-    id: "/",
+    id: "home",
+    to: '/',
     title: "Home",
     icon: "streamline:interface-home-1-home-house-map-roof",
 
   },
   {
     id: "about",
+    to: 'about',
     title: "About",
     icon: "streamline:interface-user-profile-focus-close-geometric-human-person-profile-focus-user",
   },
   {
     id: "project",
+    to: "project",
     title: "Project",
     icon: "streamline:interface-setting-tool-box-box-briefcase-tool-settings",
   },
   {
     id: "articles",
+    to: "articles",
     title: "Articles",
     icon: "streamline:entertainment-news-paper-newspaper-periodical-fold-content",
   },
   {
-    id: "#",
+    id: "darkmode",
+    to: "",
     icon: "line-md:sunny-outline-to-moon-loop-transition",
     class: "-top-36 group-hover:translate-y-[5.5rem]"
   },
