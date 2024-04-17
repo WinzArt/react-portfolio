@@ -47,14 +47,16 @@ const Blob = (props) => {
           />
         </svg>
       </div>
-      <ul className='flex list-none flex-col items-center gap-10'>
+      <m.ul
+        variants={fadeIn('left', 'spring', 0.1, 1)}
+        className='flex list-none flex-col items-center gap-10'
+      >
         {sosMed.map((icon) => (
           <m.li
             key={icon.id}
             className='cursor-pointer text-2xl md:text-3xl'
             whileHover={{ y: -3 }}
             whileTap={{ scale: 0.9 }}
-            variants={fadeIn('left', 'spring', 0.1, 1)}
           >
             <m.div>
               <Link
@@ -70,7 +72,7 @@ const Blob = (props) => {
             </m.div>
           </m.li>
         ))}
-      </ul>
+      </m.ul>
     </div>
   )
 }

@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom'
 import { motion as m } from 'framer-motion'
 import { Icon } from '@iconify/react'
 
-import { Head, AnimatedText } from '../components'
 import { zoomIn, fadeIn, textVariant, slideIn } from '../utils/motion'
 import { Blob } from '../assets'
 
 import { styles } from '../styles'
+import TitleBar from '../constants'
 
 const jobTitles = ['Technical Engineer', 'Web Developer', 'Web Designer']
 
@@ -52,7 +52,7 @@ const Home = (index, title) => {
 
   return (
     <>
-      <Head title='Home' />
+      <TitleBar title='Home' />
       <main
         className={` ${styles.padding} relative flex w-full flex-col-reverse items-center justify-between overflow-x-hidden lg:flex-row`}
       >
@@ -61,10 +61,6 @@ const Home = (index, title) => {
             variants={slideIn('left', 'spring', '0', '1')}
             className='text-xl font-semibold leading-6'
           >{`Hi! 👋 I'm`}</m.span>
-          {/* <AnimatedText
-            text='Edi Winarno'
-            className='text-5xl font-bold sm:text-7xl'
-          /> */}
           <m.h1
             variants={textVariant()}
             className='text-5xl font-bold sm:text-7xl'
@@ -75,9 +71,10 @@ const Home = (index, title) => {
             Student & <span className='text-primary'>{text}</span>
           </h3>
           <m.p className='py-5 text-base' variants={fadeIn('', '', 0.3, 1)}>
-            <span className='font-semibold'>{`I'm a 5th-semester`}</span>
+            <span className='font-medium text-slate-400'>{`I'm a 5th-semester `}</span>
             computer science student studying informatics engineering at
-            Pamulang University with a passion for technology.
+            <span className='font-medium text-primary'>{` Pamulang University `}</span>{' '}
+            with a passion for technology.
           </m.p>
           <m.div
             whileHover={{ y: -3 }}

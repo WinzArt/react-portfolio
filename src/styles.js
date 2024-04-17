@@ -17,11 +17,8 @@ const styles = {
   swiperBtn:
     'slider-arrow flex h-6 w-6 items-center justify-center rounded-full border-2 border-primary opacity-50 dark:opacity-100 drop-shadow-2xl backdrop-blur-sm after:content-none',
 
-  slideActive:
-    'w-full rounded-lg object-cover drop-shadow-xl',
-  slideNotActive:
-    'w-full rounded-lg object-cover drop-shadow-xl blur-sm'
-
+  slideActive: 'w-full rounded-lg object-cover drop-shadow-xl',
+  slideNotActive: 'w-full rounded-lg object-cover drop-shadow-xl blur-sm',
 }
 
 export { styles }

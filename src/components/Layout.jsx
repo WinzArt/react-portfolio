@@ -5,11 +5,12 @@ import { Navbar, Footer } from './index'
 import { styles } from '../styles'
 
 import { staggerContainer } from '../utils/motion'
+import { bgImage } from '../assets'
 
 const Layout = (Component, idName) => {
   return (
     <motion.div
-      className='overflow-x-hidden bg-slate-200 dark:bg-slate-800 dark:text-light'
+      className='overflow-x-hidden bg-slate-200 transition-all duration-1000 ease-in-out dark:bg-slate-800 dark:text-light'
       variants={staggerContainer()}
       initial='hidden'
       animate='show'
